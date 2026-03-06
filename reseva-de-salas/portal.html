@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Portal de Controle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h1>Bem-vindo ao Portal</h1>
+        <button onclick="Storage.logout()">Sair</button>
+    </nav>
+
+    <main>
+        <section id="area-turmas">
+            <h2>Minhas Turmas</h2>
+            <div id="lista-turmas"></div>
+            
+            <hr>
+            
+            <h3>Criar Nova Turma</h3>
+            <input type="text" id="nome-turma" placeholder="Nome da Turma">
+            <button onclick="turmas.criar()">Criar Turma</button>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/turmas.js"></script> <script>
+        // Proteção de rota
+        if (!Storage.getSession()) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
